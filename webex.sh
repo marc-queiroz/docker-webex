@@ -18,4 +18,3 @@ docker run --rm --name webex \
         -v /dev/shm:/dev/shm \
 		--device /dev/dri \
 		webex
-

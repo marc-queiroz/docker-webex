@@ -62,8 +62,10 @@ $docker build --tag=webex .
 $./webex.sh
 ```
 # Acknolodgement and thanks to other dockers related repositories at github
-I would like to thank the owners of this two repositories to provide great inspiration for my version of docker webex for linux.
+I would like to thank the owners of this repositories for providing great inspiration for my own version of docker webex for linux.
 
 [docker-webex](https://github.com/fgsch/docker-webex)
 
 [webex-docker](https://github.com/diyan/webex-docker)
+
+[Pulseaudio configs](https://github.com/yohanakh/webex-docker)

@@ -1,6 +1,53 @@
 # docker-webex
 Docker Webex - Run webex enable browser with pulseaudio enable capabilities.
 
+# host prerequisites
+
+Need to install paprefs - A simple GTK-based configuration dialog for PulseAudio
+
+Then you need to enable network access inside your /etc/pulse/default.pa,
+uncomment this two modules, module-native-protocol-tcp and
+module-zeroconf-publish. 
+
+
+```bash
+### Network access (may be configured with paprefs, so leave this commented
+### here if you plan to use paprefs)
+#load-module module-esound-protocol-tcp
+load-module module-native-protocol-tcp
+load-module module-zeroconf-publish
+```
+
+Enable your avahi daemon service, for service discovery
+
+```bash
+sudo systemctl start avahi-daemon.service
+```
+
+You need to restart pulseaudio service.
+
+```bash
+pulseaudio -k
+pulseaudio --start
+```
+
+Open your paprefs application.
+
+```bash
+$paprefs
+```
+
+In network access tab enable *Make discoverable PulseAudio netwrok sound
+devices available locally*
+
+In network server tab enable *Enable network access to local sound devices*.
+
+If you find any problems using pulseaudio from Firefox docker instance, try to
+open some video at youtube.com to test. Maybe you need to check the other two
+options, *allow other machines on the LAN to discover local sound devices* and
+*don't require authentication*.
+
+
 # docker build command
 ## Inside the repository execute the command on shell
 

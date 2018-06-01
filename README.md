@@ -21,14 +21,14 @@ load-module module-zeroconf-publish
 Enable your avahi daemon service, for service discovery
 
 ```bash
-sudo systemctl start avahi-daemon.service
+$sudo systemctl start avahi-daemon.service
 ```
 
 You need to restart pulseaudio service.
 
 ```bash
-pulseaudio -k
-pulseaudio --start
+$pulseaudio -k
+$pulseaudio --start
 ```
 
 Open your paprefs application.
@@ -37,15 +37,15 @@ Open your paprefs application.
 $paprefs
 ```
 
-In network access tab enable *Make discoverable PulseAudio netwrok sound
-devices available locally*
+In network access tab enable **Make discoverable PulseAudio network sound
+devices available locally**
 
-In network server tab enable *Enable network access to local sound devices*.
+In network server tab enable **Enable network access to local sound devices**.
 
 If you find any problems using pulseaudio from Firefox docker instance, try to
 open some video at youtube.com to test. Maybe you need to check the other two
-options, *allow other machines on the LAN to discover local sound devices* and
-*don't require authentication*.
+options, **allow other machines on the LAN to discover local sound devices** and
+**don't require authentication**.
 
 
 # docker build command
@@ -61,7 +61,7 @@ $docker build --tag=webex .
 ```bash
 $./webex.sh
 ```
-# Acknolodgement and thanks to other dockers related repositories at github
+# Acknowledgement and thanks to other dockers related repositories at github
 I would like to thank the owners of this repositories for providing great inspiration for my own version of docker webex for linux.
 
 [docker-webex](https://github.com/fgsch/docker-webex)
